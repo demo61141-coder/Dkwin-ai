@@ -118,6 +118,7 @@ export const siteSettings = pgTable("site_settings", {
   bkashType: text("bkash_type").notNull().default("Send Money (সেন্ড মানি)"),
   nagadType: text("nagad_type").notNull().default("Send Money (সেন্ড মানি)"),
   rocketType: text("rocket_type").notNull().default("Cash Out (ক্যাশ আউট)"),
+  upayType: text("upay_type").notNull().default("Send Money (সেন্ড মানি)"),
   depositRules: text("deposit_rules")
     .notNull()
     .default(
@@ -134,14 +135,17 @@ export const siteSettings = pgTable("site_settings", {
   depositBonusPercent: doublePrecision("deposit_bonus_percent").notNull().default(5.0),
   welcomeBonus: doublePrecision("welcome_bonus").notNull().default(0.0),
   wingoFeePercent: doublePrecision("wingo_fee_percent").notNull().default(2.0),
-  nextWingoResult: text("next_wingo_result").notNull().default("auto"), // auto, least_bet, big, small, green, red, violet, 0-9
-  nextCrashPoint: doublePrecision("next_crash_point").notNull().default(0.0), // 0 = auto, >0 = forced multiplier
+  nextWingoResult: text("next_wingo_result").notNull().default("auto"),
+  nextCrashPoint: doublePrecision("next_crash_point").notNull().default(0.0),
   crashMaxMultiplier: doublePrecision("crash_max_multiplier").notNull().default(25.0),
-  slotWinRate: integer("slot_win_rate").notNull().default(42), // 0 - 100%
-  referralCommissionPercent: doublePrecision("referral_commission_percent").notNull().default(2.0),
+  thimbleWinRate: integer("thimble_win_rate").notNull().default(40),
+  slotWinRate: integer("slot_win_rate").notNull().default(42),
+  referralCommissionPercent: doublePrecision("referral_commission_percent").notNull().default(3.0),
+  referralBonusAmount: doublePrecision("referral_bonus_amount").notNull().default(50.0),
   referralSignupBonus: doublePrecision("referral_signup_bonus").notNull().default(0.0),
   telegramUsername: text("telegram_username").notNull().default("@DKWIN_Official_Support"),
-  adminPin: text("admin_pin").notNull().default("admin1234"),
+  telegramChannel: text("telegram_channel").notNull().default("https://t.me/DKWIN_Official_Support"),
+  adminPin: text("admin_pin").notNull().default("123456"),
   siteNotice: text("site_notice")
     .notNull()
     .default("DKWIN অফিসিয়াল গেমিং প্ল্যাটফর্মে স্বাগতম! সর্বনিম্ন ডিপোজিট ৫০ টাকা এবং সর্বনিম্ন বেট ১ টাকা। বিকাশ ও নগদে দ্রুত পেমেন্ট।"),
